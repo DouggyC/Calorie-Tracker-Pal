@@ -1,0 +1,26 @@
+<div id="search-component" class="input-group">
+  <div class="input-group-prepend">
+    <div class="input-group-text">
+      <i class="fas fa-search"></i>
+    </div>
+  </div>
+  <input
+    #searchBox
+    id="search-box"
+    (input)="searchFood(searchBox.value)"
+    class="form-control"
+    placeholder="Search foods..."
+    autocomplete="off"
+  />
+</div>
+<div>
+  <ul *ngFor="let food of foods$ | async">
+    <li
+      *ngFor="let f of food.splice(0, 5)"
+      style="height: 50px; background-color: white;"
+    >
+      <p>{{ f.food_name }}</p>
+      <!-- <a routerLink="#">food.food_name</a> -->
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,41 @@
+#macros-total {
+  justify-content: space-between;
+}
+
+span {
+  font-size: 2em;
+  line-height: 0.7;
+}
+
+span > p:last-child {
+  font-weight: 100;
+  font-size: 60%;
+  color: gray;
+}
+
+#prog-bar {
+  width: 100%;
+  background-color: #dac2fb;
+  border-radius: 0;
+  height: 0.5em;
+}
+
+#prog-bar > .progress-bar {
+  background-color: #6200ee;
+}
+
+#meal-cal {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: space-around;
+  justify-items: center;
+}
+
+#meal-cal > span {
+  text-align: center;
+}
+
+#meal-cal > span > p:first-child {
+  font-size: 80%;
+  font-weight: 550;
+}

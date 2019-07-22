@@ -1,0 +1,17 @@
+<header class="container-fluid py-2">
+  <app-search></app-search>
+  <br />
+  <div class="date-title">
+    <i (click)="yesterday()" class="fas fa-chevron-left"></i>
+    <h1>
+      <p class="noselect">
+        {{
+          date$ === undefined || date$ === shadow_date
+            ? 'Today'
+            : (date$ | date: 'dd MMM')
+        }}
+      </p>
+    </h1>
+    <i (click)="tomorrow()" class="fas fa-chevron-right"></i>
+  </div>
+</header>

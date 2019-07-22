@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MockDataService } from './services/mock-data.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'purple-calorie-tracker';
+  constructor(private _mockDataService: MockDataService) {
+    // this._mockDataService.intake_list$.subscribe();
+  }
 }

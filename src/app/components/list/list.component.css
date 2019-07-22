@@ -1,0 +1,44 @@
+/* Food List items */
+
+#food-item {
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: minmax(auto, 100px) minmax(300px, 1fr);
+  grid-template-rows: minmax(auto, auto);
+}
+
+#f-item-col1 {
+  height: 100px;
+  width: 100px;
+  padding: 10px 10px;
+  margin: 0 10px;
+}
+
+#f-item-col2 {
+  display: grid;
+  padding: 15px 50px 10px 0;
+  border-bottom: 1px solid grey;
+}
+
+#f-item-col1 > img {
+  border-radius: 8px;
+  /* background-position: center; Center the image */
+  background-size: contain;
+}
+
+.f-item {
+  padding: 0;
+  font-size: 1.5em;
+  line-height: 1;
+  display: flex;
+  justify-content: space-between;
+}
+.f-item > p {
+  margin: 0 0 0 0;
+  padding: 10px 0 0 0;
+}
+
+.f-item:last-child > p {
+  padding: 0;
+  color: grey;
+}

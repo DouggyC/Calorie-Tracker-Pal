@@ -1,0 +1,26 @@
+<ul class="mt-2">
+  <li id="food-item" *ngFor="let food of intake_list$ | async">
+    <!--  -->
+    <div id="f-item-col1" class="">
+      <img src="{{ food.thumb }}" style="height: 100%; width: 100%;" />
+    </div>
+    <!--  -->
+    <div id="f-item-col2">
+      <!--  -->
+      <div class="f-item fw500">
+        <p>{{ food.food_name | titlecase }}</p>
+        <p>{{ food.nf_calories | number: '1.0-0' }} cal</p>
+      </div>
+      <div class="f-item">
+        <p class="fs80">
+          {{ food.serving_qty }} {{ food.serving_unit }} ({{
+            food.serving_weight_grams | number: '1.0-0'
+          }}
+          g)
+        </p>
+        <p class="fs80">{{ food.meal_type | titlecase }}</p>
+      </div>
+      <!--  -->
+    </div>
+  </li>
+</ul>

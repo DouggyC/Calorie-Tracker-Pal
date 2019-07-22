@@ -1,1 +1,56 @@
-/* You can add global styles to this file, and also import other style files */
+/* Resets */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  line-height: 1;
+  overflow: hidden;
+}
+
+/* Utilities */
+
+/* Font size */
+.fs2em {
+  font-size: 2em;
+}
+.fs50 {
+  font-size: 50%;
+}
+.fs60 {
+  font-size: 60%;
+}
+.fs80 {
+  font-size: 80%;
+}
+
+/* Font Weight */
+.fw350 {
+  font-weight: 350;
+}
+.fw500 {
+  font-weight: 500;
+}
+.fw700 {
+  font-weight: 700;
+}
+
+/* Border */
+.bd-red {
+  border: 1px solid red;
+}
+.bd-blue {
+  border: 1px solid blue;
+}
+
+/* Circle radius */
+.circle {
+  border-radius: 50%;
+}
+
+/* Background */
+.bg-pink {
+  background-color: pink;
+}

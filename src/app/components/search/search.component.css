@@ -1,0 +1,25 @@
+#search-component input[type='text']:focus {
+  box-shadow: none;
+}
+/* Chrome, FF, IE, Edge */
+#search-component input[type='text']::placeholder {
+  color: #000;
+  opacity: 1; /* Firefox */
+}
+#search-component input[type='text']:-ms-input-placeholder {
+  /* IE */
+  color: #000;
+}
+#search-component input[type='text']::-ms-input-placeholder {
+  /* Edge*/
+  color: #000;
+}
+
+.input-group-text {
+  background-color: #ffffff;
+  border: none;
+}
+
+.form-control {
+  border: none;
+}
