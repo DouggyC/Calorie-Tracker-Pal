@@ -1,26 +1,77 @@
 <div id="search-component" class="input-group">
   <div class="input-group-prepend">
+    <!-- Search Icon -->
     <div class="input-group-text">
       <i class="fas fa-search"></i>
     </div>
   </div>
+  <!-- Search Input -->
   <input
     #searchBox
-    id="search-box"
     (input)="searchFood(searchBox.value)"
+    id="search-box"
     class="form-control"
     placeholder="Search foods..."
     autocomplete="off"
   />
 </div>
-<div>
-  <ul *ngFor="let food of foods$ | async">
+
+<!-- Search List -->
+<div class="mt-2">
+  <!-- Common Foods -->
+  <ul
+    *ngFor="let food of foods$ | async"
+    id="ul-search-list"
+    class="my-0 pt-1 rounded-top"
+  >
+    <p>COMMON</p>
     <li
-      *ngFor="let f of food.splice(0, 5)"
-      style="height: 50px; background-color: white;"
+      id="f-search-item"
+      *ngFor="let f of food.common.splice(0, 5)"
+      style="background-color: white;"
     >
-      <p>{{ f.food_name }}</p>
-      <!-- <a routerLink="#">food.food_name</a> -->
+      <div id="f-search-col1">
+        <img src="{{ f.photo.thumb }}" style="height: 100%; width: 100%;" />
+      </div>
+      <div class="f-search-col2" id="">
+        <p>{{ f.food_name | titlecase }}</p>
+      </div>
+    </li>
+  </ul>
+
+  <!-- Branded Foods -->
+  <ul
+    *ngFor="let food of foods$ | async"
+    id="ul-search-list"
+    class="my-0 py-1 border-top rounded-bottom"
+  >
+    <p>BRANDED</p>
+    <li
+      id="f-search-item"
+      *ngFor="let f of food.branded.splice(0, 5)"
+      style="background-color: white;"
+    >
+      <div id="f-search-col1">
+        <img src="{{ f.photo.thumb }}" style="height: 100%; width: 100%;" />
+      </div>
+      <div class="f-search-col2 pt-1" id="">
+        <p>{{ f.food_name | titlecase }}</p>
+        <p class="subtitle-lighten">{{ f.brand_name | titlecase }}</p>
+      </div>
     </li>
   </ul>
 </div>
+<!-- <li
+  id="f-search-item"
+  class=""
+  *ngFor="let f of food.splice(0, 5)"
+  style="background-color: white;"
+>
+  <div id="f-search-col1" class="">
+    <img src="{{ f.photo.thumb }}" style="height: 100%; width: 100%;" />
+  </div>
+  <div id="f-search-col2" class="">
+    <p>{{ f.food_name | titlecase }}</p>
+  </div>
+  <!-- <a routerLink="#">food.food_name</a>
+</li> -->

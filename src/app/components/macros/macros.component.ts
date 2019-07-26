@@ -9,7 +9,7 @@ import {
   mergeMap,
   defaultIfEmpty
 } from 'rxjs/operators';
-import { from } from 'rxjs';
+import { from, animationFrameScheduler } from 'rxjs';
 
 @Component({
   selector: 'app-macros',
@@ -84,7 +84,18 @@ export class MacrosComponent implements OnInit {
   //   map(a => Math.round(a))
   // );
 
+  div = document.querySelector('.height');
+
   constructor(private mockDataService: MockDataService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    // animationFrameScheduler.schedule(
+    //   height => {
+    //     this.div.style.height = height + 'px';
+    //     this.schedule(height + 1);
+    //   },
+    //   0,
+    //   0
+    // );
+  }
 }

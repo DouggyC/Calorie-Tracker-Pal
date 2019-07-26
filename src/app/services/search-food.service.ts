@@ -2,7 +2,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 //
-import { Observable, of } from 'rxjs';
+import { Observable, of, from } from 'rxjs';
 import {
   tap,
   map,
@@ -11,7 +11,8 @@ import {
   toArray,
   pluck,
   partition,
-  filter
+  filter,
+  mergeMap
 } from 'rxjs/operators';
 
 const httpOptions = {
@@ -40,9 +41,13 @@ export class SearchFoodService {
       .get<any>(
         `${BASE_URL + SEARCH_INSTANT}?query=${encodeURIComponent(
           term
-        )}&common=true`,
+        )}&common=true&branded=true`,
         httpOptions
       )
-      .pipe(map(a => [[...a.common], [...a.branded]]));
+      .pipe(
+        tap(a => console.log(a)),
+        map(a => [a]),
+        tap(a => console.log(a))
+      );
   }
 }

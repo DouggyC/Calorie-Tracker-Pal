@@ -7,8 +7,14 @@ import { MainLayoutComponent } from './components/main-layout/main-layout.compon
 import { ListComponent } from './components/list/list.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { MacrosComponent } from './components/macros/macros.component';
+import { TestComponent } from './test/test.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: 'test',
+    component: TestComponent
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
@@ -22,5 +28,6 @@ export const RoutingComponent = [
   MainLayoutComponent,
   ListComponent,
   ProfileComponent,
-  MacrosComponent
+  MacrosComponent,
+  TestComponent
 ];

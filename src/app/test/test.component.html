@@ -1,0 +1,8 @@
+<div class="course-title">
+  {{ course.cardIndex || '' + ' ' + course.description }}
+</div>
+
+<div class="course-description">
+  Edit Title: <input #courseTitle [value]='description'
+  (keyup)='onTitleChanged(courseTitle.value)'
+</div>
