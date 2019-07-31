@@ -35,7 +35,10 @@ export class MockDataService {
   weight$ = this.DataSource$.pipe(pluck('weight_kg'));
 
   // Macros and List component
-  daily_goal$ = this.DataSource$.pipe(pluck('daily_goal'));
+  daily_goal$ = this.DataSource$.pipe(
+    pluck('daily_goal'),
+    tap(a => console.log(typeof a))
+  );
   // Using rxjs operators
   intake_list$ = new BehaviorSubject<any[]>(diet.data_points[0].intake_list);
   // alternate; using ES6

@@ -9,17 +9,17 @@ import {
   mergeMap,
   defaultIfEmpty
 } from 'rxjs/operators';
-import { from, animationFrameScheduler } from 'rxjs';
+import { from, animationFrameScheduler, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-macros',
   templateUrl: './macros.component.html',
   styleUrls: ['./macros.component.css']
 })
-export class MacrosComponent implements OnInit {
+export class MacrosComponent implements OnInit, AfterViewInit {
   daily_goal: any = this.mockDataService.daily_goal$;
 
-  consumed_cal: any = this.mockDataService.intake_list$.pipe(
+  consumed_cal: Observable<number> = this.mockDataService.intake_list$.pipe(
     mergeMap((arr: number[]) =>
       from(arr).pipe(
         defaultIfEmpty(0),
@@ -75,8 +75,9 @@ export class MacrosComponent implements OnInit {
     )
   );
 
+  percentage = Number(this.consumed_cal) / this.daily_goal;
+
   // Progress Bar
-  percentage = (this.daily_goal / this.consumed_cal) * 100;
 
   // Unused alternate solution using ES6
   // consumed_cal2$ = this.mockDataService.consumed_cal2$.pipe(
@@ -88,7 +89,13 @@ export class MacrosComponent implements OnInit {
 
   constructor(private mockDataService: MockDataService) {}
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  ngAfterViewInit() {
+    // console.log(typeof this.percentage);
+    // console.log(this.percentage);
+    // console.log(this.consumed_cal);
+    // console.log(typeof this.daily_goal);
     // animationFrameScheduler.schedule(
     //   height => {
     //     this.div.style.height = height + 'px';

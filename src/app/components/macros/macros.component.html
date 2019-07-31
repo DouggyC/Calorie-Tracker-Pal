@@ -29,7 +29,8 @@
       class="mt-2"
       style="margin-left: 86%; color: gray; font-weight: bold; text-indent: -40%"
     >
-      {{ (percentage | async) || (0 | percent) }}
+      <!-- {{ 0 || daily_goal | percent | async }} -->
+      {{ percentage | async | percent }}
     </p>
   </div>
   <!--  -->
