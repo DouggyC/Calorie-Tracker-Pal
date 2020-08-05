@@ -15,9 +15,8 @@
     autocomplete="off"
   />
 </div>
-
 <!-- Search List -->
-<div class="mt-2" id="search-list" style="position:absolute;">
+<div class="mt-2" id="search-list">
   <!-- Common Foods -->
   <ul
     *ngFor="let food of foods$ | async"
@@ -28,12 +27,11 @@
     <li
       id="f-search-item"
       *ngFor="let f of food.common.splice(0, 5)"
-      style="background-color: white;"
     >
       <div id="f-search-col1">
-        <img src="{{ f.photo.thumb }}" style="height: 100%; width: 100%;" />
+        <img src="{{ f.photo.thumb }}" />
       </div>
-      <div class="f-search-col2" id="">
+      <div class="f-search-col2">
         <p>{{ f.food_name | titlecase }}</p>
       </div>
     </li>
@@ -49,12 +47,11 @@
     <li
       id="f-search-item"
       *ngFor="let f of food.branded.splice(0, 5)"
-      style="background-color: white;"
     >
       <div id="f-search-col1">
-        <img src="{{ f.photo.thumb }}" style="height: 100%; width: 100%;" />
+        <img src="{{ f.photo.thumb }}" />
       </div>
-      <div class="f-search-col2 pt-1" id="">
+      <div class="f-search-col2 pt-1 pr-3">
         <p>{{ f.food_name | titlecase }}</p>
         <p class="subtitle-lighten">{{ f.brand_name | titlecase }}</p>
       </div>
