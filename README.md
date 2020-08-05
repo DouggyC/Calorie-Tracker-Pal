@@ -71,10 +71,14 @@ TODO:
 
 > Clone or download repository
 
-> Run:
+> Install dependencies:
 
 ```
-  npm install
+  npm i or yarn
+```
+
+> Run server:
+```
   ng serve -o
 ```
 
