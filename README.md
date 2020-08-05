@@ -79,7 +79,7 @@ TODO:
 
 > Run server:
 ```
-  ng serve -o
+  npm start or yarn start
 ```
 
 > navigate to:
