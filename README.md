@@ -51,14 +51,14 @@ TODO:
 
 > Your design does not need to store persistent data for different days. Use the given mock data as a 2-day backward history fake data demo and leave today’s intake list empty. That is, ‘Today’ (empty list), ‘Yesterday’ (mock day 1), ‘dd MMM’ (mock day 2). For example, if today is 17 June, the days must be Today, Yesterday, and 15 June.
 
-### How to best manage state?
+### Options to persist state?
 
 #### Best and prod ready
 
 - [ ] Services or NgRx
   > no persistence?
 
-#### Hacky but light weight
+#### light weight per machine
 
 - [ ] localStorage / indexDB
   > Has persistence
